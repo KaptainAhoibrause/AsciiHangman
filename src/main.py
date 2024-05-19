@@ -1,6 +1,6 @@
 import random
 import sys
-import ascii_art
+from resources import ascii_art
 
 words = ["blauwal", "meerschweinchen", "hai", "delfin", "kabeljau"]
 letters_guessed = []
