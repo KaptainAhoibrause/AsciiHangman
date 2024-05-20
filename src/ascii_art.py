@@ -1,3 +1,5 @@
+# My first Ascii-Arts for this project :^)
+
 line_one = """------
      |
    /^^^|
@@ -21,8 +23,11 @@ line_four = """    '''
   ''   ''
  ''     ''"""
 
-print(line_one)
-print(line_two_1)
-print(line_two_2)
-print(line_three)
-print(line_four)
+# ---------------------------------
+
+hangman_stages = []
+
+for x in range(0, 5):
+    f = open('hangman_stage_{fx}'.format(fx=x), 'r')
+    hangman_stages.append(f.read())
+    f.close()
