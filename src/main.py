@@ -74,6 +74,7 @@ def start_game():  # The initial start of the game.
                         print("""You found letter no""", x + 1,
                               """which is""", random_word[x])
                         letterFound = True
+                        break
                 if not letterFound:
                     print("You didn't found letter number", x + 1)
                 letterFound = False
