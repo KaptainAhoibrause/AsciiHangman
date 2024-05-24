@@ -12,7 +12,7 @@ First of all you need to have Python 3 installed.
 The Program uses the modules `random` and `sys`. These should be preinstalled. Otherwise you can install them like this:
 ```commandline
 python -m venv env
-source env/bin/activate # On Windows env/Scripts/activate
+source env/bin/activate # On Windows env\Scripts\activate
 ```
 
 ```commandline
