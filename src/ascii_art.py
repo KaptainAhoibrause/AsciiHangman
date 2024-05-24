@@ -27,7 +27,7 @@ line_four = """    '''
 
 hangman_stages = []
 
-for x in range(0, 5):
+for x in range(0, 6):
     f = open('resources/hangman_stage_{fx}.txt'.format(fx=x), 'r')
     hangman_stages.append(f.read())
     f.close()

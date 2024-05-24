@@ -11,6 +11,7 @@ letters_already_guessed = []
 letterAlreadyGuessed = False
 letterGuessed = False
 letterFound = False
+timesWrongGuessed = 0
 
 
 def welcome_script():  # The welcome script that starts the game.
@@ -44,7 +45,7 @@ Enjoy!""")
 
 def start_game():  # The initial start of the game.
     global word_accepted, random_word, finished, letterAlreadyGuessed, \
-        letterGuessed, letters_already_guessed, letterFound
+        letterGuessed, letters_already_guessed, letterFound, timesWrongGuessed
     while not word_accepted:  # Asking if the words length is ok
         random_word = words[random.randint(0, len(words)) - 1]
         print("""Are you okay with a word that is""", len(random_word), """letters long?""")
@@ -67,18 +68,23 @@ def start_game():  # The initial start of the game.
                     letters_guessed.append(x)
             if not letterGuessed:  # say this if the letter wasn't found in the word.
                 print("""Sorry this is the wrong letter.""")
+                timesWrongGuessed += 1
             print("""Your word now looks like this:""")  # giving the letters you guessed.
             for x in range(0, len(random_word)):
                 for y in range(0, len(letters_guessed)):
                     if random_word[x] == random_word[letters_guessed[y]]:
-                        print("""You found letter no""", x + 1,
+                        print("""You found letter no    """, x + 1,
                               """which is""", random_word[x])
                         letterFound = True
                         break
                 if not letterFound:
                     print("You didn't found letter number", x + 1)
                 letterFound = False
-            if len(letters_guessed) > len(random_word) - 1:  # giving congrats if you won the game.
+            print(hangman_stages[timesWrongGuessed])
+            if timesWrongGuessed >= 5:
+                print("""Sorry, you guessed wrong to often :-(""")
+                finished = True
+            elif len(letters_guessed) > len(random_word) - 1:  # giving congrats if you won the game  and ending.
                 print("""You won the Games and guessed the word:""", random_word, """
 Congrats!!""")
                 finished = True
