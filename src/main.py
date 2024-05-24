@@ -2,6 +2,7 @@ import random
 import sys
 import os
 from ascii_art import *
+from config import *
 
 words = ["blauwal", "meerschweinchen", "hai", "delfin", "kabeljau"]
 letters_guessed = []
@@ -16,7 +17,10 @@ timesWrongGuessed = 0
 
 
 def clear_terminal():
-    os.system('cls' if os.name == 'nt' else 'clear')
+    if enableClearingTerminalScreen:
+        os.system('cls' if os.name == 'nt' else 'clear')
+    else:
+        pass
 
 
 def welcome_script():  # The welcome script that starts the game.
@@ -67,6 +71,7 @@ def start_game():  # The initial start of the game.
     while not finished:  # Main loop for the game
         print("""Alright, try to guess a letter. (Don't use capital letters)""")
         user_in = input(">")
+        clear_terminal()
         for x in range(0, len(letters_already_guessed)):  # Checking if the the latter was already guessed and...
             if user_in == letters_already_guessed[x]:
                 print("""You already guessed that letter.""")
@@ -80,29 +85,32 @@ def start_game():  # The initial start of the game.
             if not letterGuessed:  # say this if the letter wasn't found in the word.
                 print("""Sorry this is the wrong letter.""")
                 timesWrongGuessed += 1
+            elif letterGuessed:
+                print("""Wooo, you found a letter!""")
             print("""Your word now looks like this:""")  # giving the letters you guessed.
-            for x in range(0, len(random_word)):
-                for y in range(0, len(letters_guessed)):
-                    if random_word[x] == random_word[letters_guessed[y]]:
-                        print("""You found letter no    """, x + 1,
-                              """which is""", random_word[x])
-                        letterFound = True
-                        break
-                if not letterFound:
-                    print("You didn't found letter number", x + 1)
-                letterFound = False
-            print(hangman_stages[timesWrongGuessed])
-            if timesWrongGuessed >= 5:
-                print("""Sorry, you guessed wrong to often :-(""")
-                finished = True
-            elif len(letters_guessed) > len(random_word) - 1:  # giving congrats if you won the game  and ending.
-                print("""You won the Games and guessed the word:""", random_word, """
-Congrats!!""")
-                finished = True
-            letterGuessed = False
+        for x in range(0, len(random_word)):
+            for y in range(0, len(letters_guessed)):
+                if random_word[x] == random_word[letters_guessed[y]]:
+                    print("""You found letter no""", x + 1,
+                          """which is   """, random_word[x])
+                    letterFound = True
+                    break
+            if not letterFound:
+                print("You didn't found letter number", x + 1)
             letterFound = False
-        else:  # cleaning stuff if the letter was already guessed.
-            letterAlreadyGuessed = False
+        print(hangman_stages[timesWrongGuessed])
+        if timesWrongGuessed >= 5:
+            print("""Sorry, you guessed wrong to often :-(""")
+            finished = True
+        elif len(letters_guessed) > len(random_word) - 1:  # giving congrats if you won the game  and ending.
+            print("""You won the Games and guessed the word:""", random_word, """
+~~~~~~~~~~
+Congrats!!
+~~~~~~~~~~""")
+            finished = True  # Cleaning stuff
+        letterGuessed = False
+        letterFound = False
+        letterAlreadyGuessed = False
 
 
 if __name__ == '__main__':
