@@ -1,5 +1,6 @@
 import random
 import sys
+import os
 from ascii_art import *
 
 words = ["blauwal", "meerschweinchen", "hai", "delfin", "kabeljau"]
@@ -14,16 +15,22 @@ letterFound = False
 timesWrongGuessed = 0
 
 
+def clear_terminal():
+    os.system('cls' if os.name == 'nt' else 'clear')
+
+
 def welcome_script():  # The welcome script that starts the game.
     print("""Hey, Welcome to my Hangman Game!
 Cool to hear that you found it, wanna start?
 If you see any problems, feel free to open a new issue on GitHub or type "info" for more""")
     user_in = input("(y/n/info)")
     if user_in == "y" or user_in == "Y":
+        clear_terminal()
         start_game()
     elif user_in == "n" or user_in == "N":
         sys.exit()
     elif user_in == "info" or user_in == "Info":
+        clear_terminal()
         print("""This is my first ASCII-Art Game.
 'iicsaevoli' epyt
 It's a bit of a clone of the popular "Hangman"-Game
@@ -32,6 +39,7 @@ You can find my GitHub-Repo by searching for 'KaptainAhoibrause/AsciiHangman'
 Enjoy!""")
         welcome_script()
     elif user_in == "iloveascii":
+        clear_terminal()
         print(line_one)
         print(line_two_1)
         print(line_two_2)
@@ -40,6 +48,7 @@ Enjoy!""")
         print("These are my first ASCII Arts for this game :^)")
         welcome_script()
     else:
+        clear_terminal()
         welcome_script()
 
 
@@ -52,6 +61,8 @@ def start_game():  # The initial start of the game.
         user_in = input("(y/n)")
         if user_in == "y" or user_in == "Y":
             word_accepted = True
+            clear_terminal()
+        clear_terminal()
 
     while not finished:  # Main loop for the game
         print("""Alright, try to guess a letter. (Don't use capital letters)""")
