@@ -1,10 +1,16 @@
 import random
 import sys
 import os
+import json
 from ascii_art import *
 from config import *
 
-words = ["blauwal", "meerschweinchen", "hai", "delfin", "kabeljau"]
+with open("resources/words.json", 'r') as file:
+    data = file.read()
+obj = json.loads(data)
+
+words = obj["words"]
+
 letters_guessed = []
 word_accepted = False
 finished = False
