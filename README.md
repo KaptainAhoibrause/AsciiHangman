@@ -7,6 +7,9 @@ Hope you enjoy!
 
 ## Run
 
+### Note:
+The feature that the program clears the terminal screen may not work in every terminal. To disable it, go to the src/config.py file and edit the enableClearingTerminalScreen rule. You can do this with any text editor.
+
 ### Dependencies
 First of all you need to have Python 3 installed.
 The Program uses the modules `random` and `sys`. These should be preinstalled. Otherwise you can install them like this:
