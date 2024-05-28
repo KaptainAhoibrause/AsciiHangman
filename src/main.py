@@ -5,11 +5,10 @@ import json
 from ascii_art import *
 from config import *
 
-with open("resources/words.json", 'r') as file:
-    data = file.read()
-obj = json.loads(data)
+with open("resources/words.json", 'r') as f:
+    data = json.load(f)
 
-words = obj["words"]
+words = data[lang]
 
 letters_guessed = []
 word_accepted = False

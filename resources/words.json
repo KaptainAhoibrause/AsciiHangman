@@ -1,9 +1,15 @@
 {
-  "words": [
+  "german": [
     "blauwal",
     "delfin",
     "kabeljau",
     "meerschweinchen",
     "hai"
+  ],
+  "english": [
+    "whale",
+    "dolphin",
+    "guinea pig",
+    "shark"
   ]
 }
