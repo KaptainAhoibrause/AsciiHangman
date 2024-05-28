@@ -26,7 +26,7 @@ pip install sys
 ### Execute
 
 #### Linux
-If you are on any Linux distribution, just execute the start.sh file by typing `./start.sh`
+If you are on any Linux distribution, just execute the start_hangman_bash.sh or start_hangman_zsh.sh file by typing `./start_hangman_bash.sh` or `./start_hangman_zsh.sh`
 
 #### Others
 To run the program, you only have to execute the `main.py`-File in the `src`-Folder. You can use the Terminal-Command `python src/main.py` or double click the file.
