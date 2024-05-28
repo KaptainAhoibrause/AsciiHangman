@@ -29,7 +29,7 @@ def clear_terminal():
 
 
 def welcome_script():  # The welcome script that starts the game.
-    print("""Hey, Welcome to my Hangman Game!
+    print("""Hey, Welcome to my Hangman Game !
 Cool to hear that you found it, wanna start?
 If you see any problems, feel free to open a new issue on GitHub or type "info" for more""")
     user_in = input("(y/n/info)")
