@@ -92,8 +92,7 @@ def start_game():  # The initial start of the game.
                 timesWrongGuessed += 1
             elif letterGuessed:
                 print("""Wooo, you found a letter!""")
-            print("""Your word now looks like this:""")  # giving the letters you guessed.
-        for x in range(0, len(random_word)):
+        for x in range(0, len(random_word)):  # giving the letters you guessed.
             for y in range(0, len(letters_guessed)):
                 if random_word[x] == random_word[letters_guessed[y]]:
                     print("""You found letter no""", x + 1,
