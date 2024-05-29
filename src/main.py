@@ -103,7 +103,7 @@ def start_game():  # The initial start of the game.
                 print("You didn't found letter number", x + 1)
             letterFound = False
         print(hangman_stages[timesWrongGuessed])
-        if timesWrongGuessed >= 5:
+        if timesWrongGuessed >= countOfHangmanStages:
             print("""Sorry, you guessed wrong to often :-(""")
             finished = True
         elif len(letters_guessed) > len(random_word) - 1:  # giving congrats if you won the game  and ending.
