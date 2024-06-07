@@ -1,4 +1,9 @@
-from config import *
+#  Defining Variable from the config.txt file
+contOfHangmanStages = None
+
+with open("src/config.txt", "r") as txtf:
+    exec(txtf.read())
+
 # My first Ascii-Arts for this project :^)
 
 line_one = """------

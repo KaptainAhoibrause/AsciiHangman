@@ -3,10 +3,17 @@ import sys
 import os
 import json
 from ascii_art import *
-from config import *
+
+#  Defining Variables from the config.txt file
+enableClearingTerminalScreen = None
+lang = None
+countOfHangmanStages = None
 
 with open("resources/words.json", 'r') as f:
     data = json.load(f)
+
+with open("src/config.txt", "r") as txtf:
+    exec(txtf.read())
 
 words = data[lang]
 
@@ -16,7 +23,6 @@ finished = False
 random_word = None
 letters_already_guessed = []
 letterAlreadyGuessed = False
-letterGuessed = False
 letterFound = False
 timesWrongGuessed = 0
 
