@@ -1,7 +1,8 @@
 #  Defining Variable from the config.txt file
 contOfHangmanStages = None
+global countOfHangmanStages
 
-with open("src/config.txt", "r") as txtf:
+with open("resources/config.txt", "r") as txtf:
     exec(txtf.read())
 
 # My first Ascii-Arts for this project :^)

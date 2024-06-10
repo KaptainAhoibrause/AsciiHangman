@@ -12,7 +12,7 @@ countOfHangmanStages = None
 with open("resources/words.json", 'r') as f:
     data = json.load(f)
 
-with open("src/config.txt", "r") as txtf:
+with open("resources/config.txt", "r") as txtf:
     exec(txtf.read())
 
 words = data[lang]
@@ -35,6 +35,7 @@ def clear_terminal():
 
 
 def welcome_script():  # The welcome script that starts the game.
+    clear_terminal()
     print("""Hey, Welcome to my Hangman Game !
 Cool to hear that you found it, wanna start?
 If you see any problems, feel free to open a new issue on GitHub or type "info" for more""")
@@ -121,8 +122,3 @@ Congrats!!
         letterGuessed = False
         letterFound = False
         letterAlreadyGuessed = False
-
-
-if __name__ == '__main__':
-    clear_terminal()
-    welcome_script()
