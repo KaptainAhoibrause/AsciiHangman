@@ -2,14 +2,14 @@ import random
 import sys
 import os
 import json
-from ascii_art import *
+from src.ascii_art import *
 
 #  Defining Variables from the config.txt file
 enableClearingTerminalScreen = None
 lang = None
 countOfHangmanStages = None
 
-with open("resources/words.json", 'r') as f:
+with open("AsciiHangman/resources/words.json", 'r') as f:
     data = json.load(f)
 
 with open("resources/config.txt", "r") as txtf:
