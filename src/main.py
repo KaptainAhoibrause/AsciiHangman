@@ -9,10 +9,10 @@ enableClearingTerminalScreen = None
 lang = None
 countOfHangmanStages = None
 
-with open("resources/words.json", 'r') as f:
+with open("AsciiHangman/resources/words.json", 'r') as f:
     data = json.load(f)
 
-with open("resources/config.txt", "r") as txtf:
+with open("AsciiHangman/resources/config.txt", "r") as txtf:
     exec(txtf.read())
 
 words = data[lang]
