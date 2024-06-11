@@ -9,7 +9,7 @@ enableClearingTerminalScreen = None
 lang = None
 countOfHangmanStages = None
 
-with open("AsciiHangman/resources/words.json", 'r') as f:
+with open("resources/words.json", 'r') as f:
     data = json.load(f)
 
 with open("resources/config.txt", "r") as txtf:
@@ -24,6 +24,7 @@ random_word = None
 letters_already_guessed = []
 letterAlreadyGuessed = False
 letterFound = False
+letterGuessed = False
 timesWrongGuessed = 0
 
 
