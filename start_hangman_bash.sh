@@ -1,3 +1,3 @@
 #!/bin/bash
-echo "Starting main.py..."
-python3 src/main.py
+echo "Starting hangman.py..."
+.venv/bin/python3 hangman.py
