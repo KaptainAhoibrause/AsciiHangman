@@ -2,7 +2,7 @@ import random
 import sys
 import os
 import json
-from src.ascii_art import *
+from ascii_art import *
 
 #  Defining Variables from the config.txt file
 enableClearingTerminalScreen = None
@@ -123,3 +123,7 @@ Congrats!!
         letterGuessed = False
         letterFound = False
         letterAlreadyGuessed = False
+
+
+if __name__ == "__main__":
+    welcome_script()
