@@ -7,7 +7,7 @@ Hope you enjoy!
 
 ## Run
 
-## Note:
+### Note:
 If you have downloaded pre-release 0.2 or newer and NOT the source code, you can skip this until Execute.
 ### Note2:
 The feature that the program clears the terminal screen may not work in every terminal. To disable it, go to the src/config.py file and edit the enableClearingTerminalScreen rule. You can do this with any text editor.
