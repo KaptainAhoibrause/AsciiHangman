@@ -1,15 +1,1 @@
-{
-  "german": [
-    "blauwal",
-    "delfin",
-    "kabeljau",
-    "meerschweinchen",
-    "hai"
-  ],
-  "english": [
-    "whale",
-    "dolphin",
-    "guinea pig",
-    "shark"
-  ]
-}
+{"german": ["blauwal", "delfin", "kabeljau", "meerschweinchen", "hai"], "english": ["whale", "dolphin", "guinea pig", "shark"]}

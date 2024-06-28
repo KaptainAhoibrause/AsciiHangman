@@ -39,8 +39,9 @@ def welcome_script():  # The welcome script that starts the game.
     clear_terminal()
     print("""Hey, Welcome to my Hangman Game !
 Cool to hear that you found it, wanna start?
+To add new words, type "aw" and to delete, "dw"
 If you see any problems, feel free to open a new issue on GitHub or type "info" for more""")
-    user_in = input("(y/n/info)")
+    user_in = input("(y/n/aw/dw/info)")
     if user_in == "y" or user_in == "Y":
         clear_terminal()
         start_game()
@@ -48,13 +49,18 @@ If you see any problems, feel free to open a new issue on GitHub or type "info" 
         sys.exit()
     elif user_in == "info" or user_in == "Info":
         clear_terminal()
-        print("""This is my first ASCII-Art Game.
+        print("""---This is my first ASCII-Art Game.
 'iicsaevoli' epyt
-It's a bit of a clone of the popular "Hangman"-Game
+---It's a bit of a clone of the popular "Hangman"-Game
 !sneppah tahw ees dna
-You can find my GitHub-Repo by searching for 'KaptainAhoibrause/AsciiHangman'
-Enjoy!""")
-        welcome_script()
+---You can find my GitHub-Repo by searching for 'KaptainAhoibrause/AsciiHangman'
+---Enjoy!""")
+        print("""~~~~~~~~~~~~~~~~~~~~
+        These are your words:""")
+        for x in range(0, len(words)):
+            print(x+1, words[x])
+        if input("q to quit ") == "q":
+            welcome_script()
     elif user_in == "iloveascii":
         clear_terminal()
         print(line_one)
@@ -63,6 +69,23 @@ Enjoy!""")
         print(line_three)
         print(line_four)
         print("These are my first ASCII Arts for this game :^)")
+        if input("q to quit ") == "q":
+            welcome_script()
+    elif user_in == "aw":
+        clear_terminal()
+        new_word = input("New Word: ")
+        data[lang].append(str(new_word))
+        with open("resources/words.json", "w") as f:
+            json.dump(data, f)
+        welcome_script()
+    elif user_in == "dw":
+        clear_terminal()
+        for x in range(0, len(words)):
+            print(x+1, words[x])
+        del_word = input("Number of word to delete: ")
+        data[lang].pop(int(del_word) - 1)
+        with open("resources/words.json", "w") as f:
+            json.dump(data, f)
         welcome_script()
     else:
         clear_terminal()
